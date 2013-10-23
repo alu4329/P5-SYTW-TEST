@@ -2,11 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'rack'
-gem 'rack-test'
 gem 'thin'
 gem 'haml'
 
 
-group :development do
-  gem "pry-debugger"
+group :development, :test do
+  gem 'rspec'
+  gem 'pry-debugger'
+  gem 'rack-test'
 end
