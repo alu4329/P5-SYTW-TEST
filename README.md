@@ -21,10 +21,12 @@ Realizar test unitarios, rspec y uso de cookies sobre la aplicación desarrollad
 
 ###Método de complicación
 	$ rake
+	$ rake unitarios
 
 Otro método:
 
 	$ ruby juego.rb
+	$ ruby testunitario.rb
 
 ****
 Posteriormente escribir en el navegador utilizado:
