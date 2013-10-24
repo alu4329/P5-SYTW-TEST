@@ -10,9 +10,14 @@ describe PiedraPapelTijera::App do
   end
 
   context '/' do
-    it "should return a 200 code" do
+    it "Debería devolver código de estado 200" do
       response = server.get('/')
       response.status.should == 200
+    end
+
+    it "Deberia haber una cabecera y un middle antes de elegir opción" do
+      response.server.get('/')
+      response.server.body = "Cabecera"
     end
   end
 end
