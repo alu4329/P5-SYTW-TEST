@@ -1,4 +1,5 @@
 require 'spec_helper'
+require '././juego.rb'
 
 describe PiedraPapelTijera::App do
 
@@ -22,6 +23,12 @@ describe PiedraPapelTijera::App do
     it "Debería haber un botton despues de que el usuario elija una opción" do
       response = server.get('/?choice=papel')
       response.body = "botton"
+    end
+
+    it "Comprobación de los hash del documento" do
+      response = server.get('/') 
+      #server.defeat.have_key?(:papel)
+      PiedraPapelTijera::App.call.@throws.should be_a_kind_of('nil')
     end
   end
 end
