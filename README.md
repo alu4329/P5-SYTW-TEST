@@ -18,10 +18,12 @@ Implementación de los test unitarios, desarrollo dirigido por pruebas (TDD) a t
 
 ###Método de complicación
 	$ rake
+	$ rake unitarios
 
 Otro método:
 
 	$ ruby juego.rb
+	$ ruby testunitario.rb
 
 ****
 Posteriormente escribir en el navegador utilizado:
