@@ -7,7 +7,7 @@
 Realizar test unitarios, rspec y uso de cookies sobre la aplicación desarrollada en prácticas anteriores.
 
 ## Descripción
-Implementación de los test unitarios, desarrollo dirigido por pruebas (TDD) a través de rspec y sistema de cookies en nuestra aplicación. Para ello he desarrollado test unitarios, haciendo uso de las gemas `rack/test` y 'test/unit`. Posteriormente he implementado test haciendo uso de rspec a través de la gema `rspec`y finalmente valiéndome del uso de cookies he implementado un registro de los resultados obtenidos en cada sesión.
+Implementación de los test unitarios, desarrollo dirigido por pruebas (TDD) a través de rspec y sistema de cookies en nuestra aplicación. Para ello he desarrollado test unitarios, haciendo uso de las gemas `rack/test` y `test/unit` . Posteriormente he implementado test haciendo uso de rspec a través de la gema `rspec`y finalmente valiéndome del uso de cookies he implementado un registro de los resultados obtenidos en cada sesión.
 
 ### Archivos incluídos en esta práctica:
 1. `testunitarios.rb` -> Implementación de los test unitarios desarrollados para la aplicación
