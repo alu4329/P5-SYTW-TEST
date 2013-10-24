@@ -1,2 +1,3 @@
 require 'rack'
-require 'rsack/server'
+#require 'rsack/server'
+require './juego.rb'
