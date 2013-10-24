@@ -25,7 +25,7 @@ Otro método:
 
 	$ ruby juego.rb
 	$ ruby testunitario.rb
-	$ ruby spec/rsack/server_spec.rb
+	$ rspec spec/rsack/server_spec.rb
 
 ****
 Posteriormente escribir en el navegador utilizado:
