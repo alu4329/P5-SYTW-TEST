@@ -2,10 +2,8 @@ require 'spec_helper'
 
 describe PiedraPapelTijera::App do
 
-  #let(:server) { Rack::MockRequest.new(Rsack::Server.new) }
   let (:server) {Rack::MockRequest.new(PiedraPapelTijera::App.new) }
   def server
-    #Rack::Mockrequest.new(Rsack::Server.new)
     Rack::MockRequest.new(PiedraPapelTijera::App.new) 
   end
 
@@ -16,8 +14,14 @@ describe PiedraPapelTijera::App do
     end
 
     it "Deberia haber una cabecera y un middle antes de elegir opción" do
-      response.server.get('/')
-      response.server.body = "Cabecera"
+      response = server.get('/')
+      response.body = "Cabecera"
+      response.body = "Middle"
+    end
+
+    it "Debería haber un botton despues de que el usuario elija una opción" do
+      response = server.get('/?choice=papel')
+      response.body = "botton"
     end
   end
 end
