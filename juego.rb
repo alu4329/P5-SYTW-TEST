@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 require 'rack'
 require 'thin'
 require 'haml'
@@ -14,12 +15,13 @@ require 'haml'
 
 	#Posibles opciones, piedra, papel o tijera.
         @throws = @defeat.keys
+
+        #Hash para almacenar las estadísticas entre diferentes sesiones.
+        @estadisticas = {'win' => 0, 'lose' => 0, 'equal' => 0}
       end
   
       def call(env)
         req = Rack::Request.new(env)
-  
-        req.env.keys.sort.each { |x| puts "#{x} => #{req.env[x]}" }
   
 	#Elección al azar por parte de la máquina
         computer_throw = @throws.sample
@@ -29,8 +31,13 @@ require 'haml'
         engine = Haml::Engine.new File.open("views/index.html.haml").read
       
         res = Rack::Response.new
-      
+
+        res.set_cookie("Victorias", {:value => @estadisticas['win'], :path => "/", :domain => "myDomain", :expires => Time.now+24*60*60})
+        res.set_cookie("Derrotas", {:value => @estadisticas['lose'], :path => "/", :domain => "myDomain", :expires => Time.now+24*60*60})
+        res.set_cookie("Empates", {:value => @estadisticas['equal'], :path => "/", :domain => "myDomain", :expires => Time.now+24*60*60})
+
 	resultado = {
+          :estadisticas => @estadisticas,
           :throws => @throws,
           :computer_throw => computer_throw,
           :player_throw => player_throw
