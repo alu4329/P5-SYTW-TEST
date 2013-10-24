@@ -20,15 +20,35 @@ describe PiedraPapelTijera::App do
       response.body = "Middle"
     end
 
-    it "Debería haber un botton despues de que el usuario elija una opción" do
+    it "Comprobar que tiene un boton" do
+      response = server.get('/')
+      response.body = "button"
+    end
+
+    it "Debería haber un botton despues de que el usuario elija papel" do
       response = server.get('/?choice=papel')
       response.body = "botton"
     end
 
-    it "Comprobación de los hash del documento" do
-      response = server.get('/') 
-      #server.defeat.have_key?(:papel)
-      PiedraPapelTijera::App.call.@throws.should be_a_kind_of('nil')
+    it "Debería haber un botton despues de que el usuario elija piedra" do
+      response = server.get('/?choice=piedra')
+      response.body = "botton"
+    end
+
+    it "Debería haber un botton despues de que el usuario elija tijera" do
+      response = server.get('/?choice=tijera')
+      response.body = "botton"
+    end
+
+    it "Comprobación del fondo" do
+      response = server.get('/')
+      response.body = "fondo.jpg"
+    end
+
+    it "Comprobación del fondo" do
+      response = server.get('/')
+      response.body = "fondo.jpg"
     end
   end
 end
+
