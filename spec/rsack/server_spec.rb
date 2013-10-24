@@ -1,4 +1,6 @@
-require 'spec_helper'
+require 'rspec'
+require 'rack'
+require 'rsack'
 require '././juego.rb'
 
 describe PiedraPapelTijera::App do
