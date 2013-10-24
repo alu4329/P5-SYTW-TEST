@@ -18,6 +18,11 @@
             %a{:href=>"/?choice=#{x}"}
               %button #{x}         
           .clear
+        #tabla.grid_5.alpha
+          %h6 Victorias: #{estadisticas['win']}
+          %h6 Derrotas #{estadisticas['lose']}  
+          %h6 Empates #{estadisticas['equal']}    
+          .clear
         #texto.grid_5.alpha
           %h3 Elección de la máquina:
           .clear
@@ -56,27 +61,34 @@
             -if player_throw == computer_throw
               #empatar
                 %h4 ¡Empataste!
+                -estadisticas['equal'] += 1
             -elsif player_throw == 'piedra'
               -if computer_throw == 'tijera'
                 #ganar
                   %h4 ¡Ganaste!
+                  -estadisticas['win'] += 1
               -else
                 #perder
                   %h4 ¡Perdiste!
+                  -estadisticas['lose'] += 1
             -elsif player_throw == 'papel'
               -if computer_throw == 'piedra'
                 #ganar
                   %h4 ¡Ganaste!
+                  -estadisticas['win'] += 1
               -else
                 #perder
-                  %h4 ¡Perdiste!           
+                  %h4 ¡Perdiste! 
+                  -estadisticas['lose'] += 1      
             -elsif player_throw == 'tijera'
               -if computer_throw == 'papel'
                 #ganar
                   %h4 ¡Ganaste!
+                  -estadisticas['win'] += 1
               -else
                 #perder
                   %h4 ¡Perdiste! 
+                  -estadisticas['lose'] += 1
             -else
           .clear
 
