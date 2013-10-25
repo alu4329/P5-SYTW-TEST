@@ -32,9 +32,9 @@ require 'haml'
       
         res = Rack::Response.new
 
-        res.set_cookie("Victorias", {:value => @estadisticas['win'], :path => "/", :domain => "myDomain", :expires => Time.now+24*60*60})
-        res.set_cookie("Derrotas", {:value => @estadisticas['lose'], :path => "/", :domain => "myDomain", :expires => Time.now+24*60*60})
-        res.set_cookie("Empates", {:value => @estadisticas['equal'], :path => "/", :domain => "myDomain", :expires => Time.now+24*60*60})
+        res.set_cookie("Victorias", {:value => @estadisticas['win'], :path => "/", :domain => "", :expires => Time.now+24*60*60})
+        res.set_cookie("Derrotas", {:value => @estadisticas['lose'], :path => "/", :domain => "", :expires => Time.now+24*60*60})
+        res.set_cookie("Empates", {:value => @estadisticas['equal'], :path => "/", :domain => "", :expires => Time.now+24*60*60})
 
 	resultado = {
           :estadisticas => @estadisticas,
